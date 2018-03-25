@@ -50,6 +50,20 @@ public class sorting {
         }
     }
 
+    public static void selSortStringAlpha(String[] words) {
+        int liten;
+        for(int i = 0; i < words.length; i++){
+            liten = i;
+            for(int j = i; j < words.length; j++) {
+                if (words[j].compareTo(words[liten]) < 0) {
+                    liten = j;
+                }
+            }
+            String temp = words[i];
+            words[i] = words[liten];
+            words[liten] = temp;
+        }
+    }
     public static void main(String[] args) {
         System.out.println("\nHeltal (Minst-Störst)");
         int[] numbers = {45, 32, 128, 42, 9, 83, 52, 96, 1, 75};
@@ -76,21 +90,6 @@ public class sorting {
         selSortStringAlpha(words);
         for(int i = 0; i < words.length; i++){
             System.out.println(words[i]);
-        }
-    }
-
-    public static void selSortStringAlpha(String[] words) {
-        int liten;
-        for(int i = 0; i < words.length; i++){
-            liten = i;
-            for(int j = i; j < words.length; j++) {
-                if (words[j].compareTo(words[liten]) < 0) {
-                    liten = j;
-                }
-            }
-            String temp = words[i];
-            words[i] = words[liten];
-            words[liten] = temp;
         }
     }
 }
